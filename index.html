@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi Portafolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/output.css">
+    <!-- Cargar GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</head>
+<body class="bg-gradient-to-r from-gray-800 via-black to-gray-800 text-white">
+
+    <!-- Sección de Navbar - Inicio del Menú -->
+    <nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="text-xl font-bold">
+                    <a href="#" class="text-white">Lil'Ten Portfolio</a>
+                </div>
+        
+                <!-- Icono de Hamburguesa para móviles -->
+                <div class="lg:hidden">
+                    <button @click="isOpen = !isOpen" class="text-white focus:outline-none" id="hamburger-btn">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+        
+                <!-- Menú para Escritorio -->
+                <div id="menu" class="hidden lg:flex space-x-8 items-center">
+                    <a href="#inicio" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-home mr-2"></i> Inicio
+                    </a>
+                    <a href="#redes" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-share-alt mr-2"></i> Redes Sociales
+                    </a>
+                    <a href="#skills" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-cogs mr-2"></i> Skills
+                    </a>
+                    <a href="#cursos" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-graduation-cap mr-2"></i> Cursos
+                    </a>
+                    <a href="#servicios" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-concierge-bell mr-2"></i> Servicios
+                    </a>
+                    <a href="#plantillas" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-laptop-code mr-2"></i> Plantillas Web
+                    </a>
+                    <a href="#contacto" class="hover:text-yellow-300 flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> Contacto
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Menú para Móviles -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-gradient-to-r from-blue-500 to-purple-600">
+                <a href="#inicio" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-home mr-2"></i> Inicio
+                </a>
+                <a href="#redes" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-share-alt mr-2"></i> Redes Sociales
+                </a>
+                <a href="#skills" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-cogs mr-2"></i> Skills
+                </a>
+                <a href="#cursos" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-graduation-cap mr-2"></i> Cursos
+                </a>
+                <a href="#servicios" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-concierge-bell mr-2"></i> Servicios
+                </a>
+                <a href="#plantillas" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-laptop-code mr-2"></i> Plantillas Web
+                </a>
+                <a href="#contacto" class="block py-2 px-4 hover:bg-purple-700 flex items-center">
+                    <i class="fas fa-envelope mr-2"></i> Contacto
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin del Menú -->
+
+<!-- Sección de presentación con video de fondo -->
+<section id="inicio" class="h-screen relative text-center flex items-center justify-center">
+    <!-- Video de fondo -->
+    <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+      <source src="img/1.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video.
+    </video>
+  
+    <!-- Contenido sobre el video -->
+    <div class="text-white px-6 py-12 bg-black bg-opacity-60 rounded-lg z-10">
+      <h1 class="text-5xl font-extrabold mb-4">Hola, soy Lil Ten</h1>
+      <h2 class="text-4xl mb-6 font-semibold text-yellow-300">Desarrollador Full Stack con pasión por la creación de soluciones web innovadoras</h2>
+      <p class="text-xl mb-8">Con experiencia en el desarrollo de aplicaciones web utilizando tecnologías modernas como React.js, Django, JavaScript, y Tailwind CSS. Me especializo en crear aplicaciones escalables, eficientes y centradas en el usuario, desde el front-end hasta el back-end.</p>
+      <div class="text-lg font-semibold mb-6">
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">HTML</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">CSS</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">JavaScript</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">React.js</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">Django</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">Node.js</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">Tailwind CSS</span>
+        <span class="inline-block bg-yellow-300 text-gray-800 px-4 py-2 rounded-full mr-4 mb-2">Git</span>
+      </div>
+      <p class="mt-6 text-lg mb-8">Si buscas un desarrollador capaz de llevar tu idea desde el concepto hasta una aplicación funcional, ¡hablemos!</p>
+      <a href="#contacto" class="contact-btn inline-block bg-yellow-500 text-gray-800 px-6 py-3 rounded-lg font-semibold text-xl transition duration-300 hover:bg-yellow-400">
+        ¡Contáctame!
+      </a>
+    </div>
+  </section>
+  
+
+
+
+  <!-- Sección de Redes Sociales con Tarjetas 3D -->
+<!-- Sección Redes Sociales Mejorada con Fondo 3D -->
+<section id="redes" class="h-screen bg-gray-900 relative flex flex-col items-center justify-center px-6 py-12">
+    <!-- Fondo de partículas -->
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+    <!-- Contenido de Redes Sociales -->
+    <div class="relative z-10 text-center">
+        <h1 class="text-5xl font-bold text-yellow-400 mb-4 animate-fade-in">Conéctate Conmigo</h1>
+        <h2 class="text-3xl font-semibold text-white mb-6 animate-fade-in-delay">¡Sígueme en mis redes sociales!</h2>
+        <p class="text-lg text-gray-300 mb-8">
+            Mantente al día con mis últimos proyectos, tutoriales y actualizaciones. ¡Haz clic en los íconos para unirte a mi comunidad digital!
+        </p>
+
+        <!-- Tarjetas Redes Sociales -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+            <!-- YouTube -->
+            <div class="bg-red-600 text-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-youtube text-6xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold">YouTube</h3>
+                    <p class="text-center mt-2">Explora mis videos de proyectos y tutoriales.</p>
+                    <a href="https://www.youtube.com" target="_blank" class="mt-4 bg-white text-red-600 px-4 py-2 rounded-lg font-medium transition hover:bg-red-500 hover:text-white">
+                        ¡Visítame!
+                    </a>
+                </div>
+            </div>
+            <!-- LinkedIn -->
+            <div class="bg-blue-700 text-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-linkedin text-6xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold">LinkedIn</h3>
+                    <p class="text-center mt-2">Conéctate conmigo en el mundo profesional.</p>
+                    <a href="https://www.linkedin.com" target="_blank" class="mt-4 bg-white text-blue-700 px-4 py-2 rounded-lg font-medium transition hover:bg-blue-800 hover:text-white">
+                        ¡Conéctate!
+                    </a>
+                </div>
+            </div>
+            <!-- GitHub -->
+            <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-github text-6xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold">GitHub</h3>
+                    <p class="text-center mt-2">Descubre mis repositorios y proyectos.</p>
+                    <a href="https://github.com" target="_blank" class="mt-4 bg-white text-gray-800 px-4 py-2 rounded-lg font-medium transition hover:bg-gray-900 hover:text-white">
+                        ¡Explora!
+                    </a>
+                </div>
+            </div>
+            <!-- CodePen -->
+            <div class="bg-black text-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-codepen text-6xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold">CodePen</h3>
+                    <p class="text-center mt-2">Experimenta con mis diseños e ideas.</p>
+                    <a href="https://codepen.io" target="_blank" class="mt-4 bg-white text-black px-4 py-2 rounded-lg font-medium transition hover:bg-gray-700 hover:text-white">
+                        ¡Inspírate!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+   <!-- Sección de Skills -->
+<!-- Sección de Skills -->
+<section id="skills" class="h-screen bg-gray-900 text-center flex flex-col items-center justify-center px-6 py-12">
+    <h1 class="text-5xl font-bold text-yellow-400 mb-8 animate-fade-in">Skills</h1>
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-semibold text-white mb-12 animate-slide-in-up">Mis Tecnologías</h2>
+        
+        <!-- Grid de Skills -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Categoría: Frontend -->
+            <div class="animate-bounce-up">
+                <h3 class="text-3xl font-bold text-blue-400 mb-6">Frontend</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-html5 text-5xl text-orange-500"></i>
+                        <p class="text-xl text-white mt-2">HTML</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-css3-alt text-5xl text-blue-500"></i>
+                        <p class="text-xl text-white mt-2">CSS</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-js text-5xl text-yellow-500"></i>
+                        <p class="text-xl text-white mt-2">JavaScript</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-git-alt text-5xl text-red-500"></i>
+                        <p class="text-xl text-white mt-2">Git</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-github text-5xl text-gray-400"></i>
+                        <p class="text-xl text-white mt-2">GitHub</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <img src="https://tailwindcss.com/favicon-32x32.png" alt="Tailwind CSS" class="inline-block w-10 h-10">
+                        <p class="text-xl text-white mt-2">Tailwind CSS</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-react text-5xl text-blue-400"></i>
+                        <p class="text-xl text-white mt-2">React.js</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Backend -->
+            <div class="animate-slide-in-left">
+                <h3 class="text-3xl font-bold text-green-400 mb-6">Backend</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-java text-5xl text-red-600"></i>
+                        <p class="text-xl text-white mt-2">Java</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-python text-5xl text-blue-500"></i>
+                        <p class="text-xl text-white mt-2">Python</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-php text-5xl text-indigo-600"></i>
+                        <p class="text-xl text-white mt-2">PHP</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fas fa-flask text-5xl text-gray-400"></i>
+                        <p class="text-xl text-white mt-2">Flask</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fas fa-database text-5xl text-green-500"></i>
+                        <p class="text-xl text-white mt-2">Django</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Database & Other -->
+            <div class="animate-slide-in-right">
+                <h3 class="text-3xl font-bold text-purple-400 mb-6">Database & Other</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fas fa-database text-5xl text-orange-600"></i>
+                        <p class="text-xl text-white mt-2">Oracle</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fas fa-database text-5xl text-blue-400"></i>
+                        <p class="text-xl text-white mt-2">MySQL</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fas fa-database text-5xl text-yellow-500"></i>
+                        <p class="text-xl text-white mt-2">PostgreSQL</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-docker text-5xl text-blue-600"></i>
+                        <p class="text-xl text-white mt-2">Docker</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-linux text-5xl text-yellow-600"></i>
+                        <p class="text-xl text-white mt-2">Linux</p>
+                    </div>
+                    <div class="text-center transform transition-transform duration-300 hover:scale-110">
+                        <i class="fab fa-npm text-5xl text-red-500"></i>
+                        <p class="text-xl text-white mt-2">npm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Sección de curso -->
+<!-- Sección de Cursos -->
+<section id="cursos" class="bg-gray-900 text-white py-16 px-6">
+    <div class="container mx-auto">
+        <!-- Descripción -->
+        <div class="text-center mb-12">
+            <h2 class="text-5xl font-bold mb-4">Cursos</h2>
+            <p class="text-lg text-gray-400">
+                Te invito a que aprendas con mis cursos diseñados para mejorar tus habilidades en programación, desarrollo web y bases de datos.
+            </p>
+        </div>
+
+        <!-- Grid de Cursos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Curso 1 -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                <img class="rounded-lg mb-4" src="https://img.youtube.com/vi/56_Xq1733IA/hqdefault.jpg" alt="Curso Intermedio: Domina CRUD en Flask con MySQL y Jinja2">
+                <h3 class="text-xl font-bold mb-2">Curso Intermedio: Domina CRUD en Flask con MySQL y Jinja2</h3>
+                <p class="text-gray-400 mb-4">Aprende a implementar aplicaciones CRUD con Flask, integrando MySQL y Jinja2 para un desarrollo web eficiente.</p>
+                <a href="https://www.youtube.com/watch?v=56_Xq1733IA&t=1670s" target="_blank" class="btn-primary">
+                    Ver Curso
+                </a>
+            </div>
+            <!-- Curso 2 -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                <img class="rounded-lg mb-4" src="https://img.youtube.com/vi/hMzNpzhUexM/hqdefault.jpg" alt="Curso Completo de Flask para Principiantes">
+                <h3 class="text-xl font-bold mb-2">Curso Completo de Flask para Principiantes</h3>
+                <p class="text-gray-400 mb-4">Desde los fundamentos hasta construir tu primera aplicación web completa con Flask.</p>
+                <a href="https://www.youtube.com/watch?v=hMzNpzhUexM&t=26s" target="_blank" class="btn-primary">
+                    Ver Curso
+                </a>
+            </div>
+            <!-- Curso 3 -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                <img class="rounded-lg mb-4" src="https://img.youtube.com/vi/9LW1QXMrpkQ/hqdefault.jpg" alt="App CRUD en Java con Maven y PostgreSQL">
+                <h3 class="text-xl font-bold mb-2">App CRUD en Java con Maven y PostgreSQL</h3>
+                <p class="text-gray-400 mb-4">Construye una aplicación Java usando patrones de diseño como DTO y DAO con PostgreSQL.</p>
+                <a href="https://www.youtube.com/watch?v=9LW1QXMrpkQ&list=PLKAjjS1Dgy1W7kJFmZGV6o5W_nhwDwU_Z" target="_blank" class="btn-primary">
+                    Ver Curso
+                </a>
+            </div>
+            <!-- Curso 4 -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                <img class="rounded-lg mb-4" src="https://img.youtube.com/vi/5ww1DZ4KJXg/hqdefault.jpg" alt="Curso de Ejercicios Python & Lógica de Programación">
+                <h3 class="text-xl font-bold mb-2">Curso de Ejercicios Python & Lógica de Programación</h3>
+                <p class="text-gray-400 mb-4">Mejora tus habilidades en Python mientras refuerzas tu lógica de programación con ejercicios prácticos.</p>
+                <a href="https://www.youtube.com/watch?v=5ww1DZ4KJXg&list=PLKAjjS1Dgy1XpKZXkJLxPqKgVigI01sbr" target="_blank" class="btn-primary">
+                    Ver Curso
+                </a>
+            </div>
+            <!-- Curso 5 -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                <img class="rounded-lg mb-4" src="https://img.youtube.com/vi/79tv9TzOpc0/hqdefault.jpg" alt="CRUD PHP & MySQL">
+                <h3 class="text-xl font-bold mb-2">CRUD PHP & MySQL</h3>
+                <p class="text-gray-400 mb-4">Domina la creación de aplicaciones CRUD utilizando PHP y MySQL de forma eficiente.</p>
+                <a href="https://www.youtube.com/watch?v=79tv9TzOpc0&list=PLKAjjS1Dgy1VvmK9hLaxJufWeduiCmJnT" target="_blank" class="btn-primary">
+                    Ver Curso
+                </a>
+            </div>
+            <!-- Curso 6 -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                <img class="rounded-lg mb-4" src="https://img.youtube.com/vi/o17R-Ixzz3Q/hqdefault.jpg" alt="Curso de PostgreSQL y Administración">
+                <h3 class="text-xl font-bold mb-2">Curso de PostgreSQL y Administración</h3>
+                <p class="text-gray-400 mb-4">Aprende a manejar y administrar bases de datos PostgreSQL con este curso completo.</p>
+                <a href="https://www.youtube.com/watch?v=o17R-Ixzz3Q&list=PLKAjjS1Dgy1VTpxLkIDC9a5wGtVj6JNEY" target="_blank" class="btn-primary">
+                    Ver Curso
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Sección de Servicios -->
+<!-- Sección de Servicios -->
+<section id="servicios" class="bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-700 text-white py-16 px-6">
+    <div class="container mx-auto text-center">
+        <!-- Título -->
+        <h1 class="text-5xl font-bold mb-8">TRANSFORMA TUS IDEAS EN REALIDAD</h1>
+        
+        <!-- Descripción -->
+        <p class="text-xl font-semibold mb-12 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-center py-4 px-6 rounded-lg shadow-lg">
+            Explora nuestros servicios diseñados para potenciar tu presencia digital y llevar tus proyectos al siguiente nivel
+        </p>
+
+        <!-- Grid de Servicios -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Servicio 1: Portafolio Personal -->
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition duration-500 hover:shadow-2xl">
+                <i class="fas fa-laptop-code text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-2">Página de Portafolio Personal</h3>
+                <p class="text-gray-700 mb-6">Crea un portafolio profesional que destaque tus habilidades y proyectos con un diseño único y responsivo.</p>
+                <a href="#portafolio" class="text-blue-600 font-semibold hover:text-blue-800 transition duration-300">Descubre más</a>
+            </div>
+            
+            <!-- Servicio 2: Diseño Responsivo -->
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition duration-500 hover:shadow-2xl">
+                <i class="fas fa-mobile-alt text-4xl text-green-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-2">Diseño Responsivo</h3>
+                <p class="text-gray-700 mb-6">Diseños adaptables que ofrecen una experiencia óptima en cualquier dispositivo, mejorando la usabilidad.</p>
+                <a href="#diseño" class="text-green-600 font-semibold hover:text-green-800 transition duration-300">Ver detalles</a>
+            </div>
+
+            <!-- Servicio 3: Creación de Blogs Personales -->
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition duration-500 hover:shadow-2xl">
+                <i class="fas fa-pen-alt text-4xl text-yellow-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-2">Creación de Blogs Personales</h3>
+                <p class="text-gray-700 mb-6">Desarrolla un blog donde puedas compartir tus ideas, historias o experiencias con un diseño moderno y funcional.</p>
+                <a href="#blog" class="text-yellow-600 font-semibold hover:text-yellow-800 transition duration-300">Empieza tu blog</a>
+            </div>
+
+            <!-- Servicio 4: Aplicaciones Web Interactivas -->
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition duration-500 hover:shadow-2xl">
+                <i class="fas fa-cogs text-4xl text-red-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-2">Aplicaciones Web Interactivas</h3>
+                <p class="text-gray-700 mb-6">Construcción de aplicaciones web dinámicas y atractivas con las últimas tecnologías, mejorando la experiencia del usuario.</p>
+                <a href="#app-web" class="text-red-600 font-semibold hover:text-red-800 transition duration-300">Solicita tu app</a>
+            </div>
+
+            <!-- Servicio 5: E-commerce -->
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition duration-500 hover:shadow-2xl">
+                <i class="fas fa-store text-4xl text-purple-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-2">E-commerce</h3>
+                <p class="text-gray-700 mb-6">Crea tu tienda en línea con diseños profesionales y funcionalidades avanzadas, maximizando tus ventas.</p>
+                <a href="#ecommerce" class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300">Descubre el servicio</a>
+            </div>
+
+            <!-- Servicio 6: Landing Pages -->
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:scale-105 transform transition duration-500 hover:shadow-2xl">
+                <i class="fas fa-clipboard-check text-4xl text-teal-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-2">Landing Pages</h3>
+                <p class="text-gray-700 mb-6">Landing pages efectivas y optimizadas para maximizar conversiones y aumentar tu alcance.</p>
+                <a href="#landing-pages" class="text-teal-600 font-semibold hover:text-teal-800 transition duration-300">Ver más detalles</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Sección de Contacto -->
+<!-- Sección de Contacto -->
+<section id="contacto" class="min-h-screen bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-700 text-white py-16 px-6">
+    <div class="container mx-auto">
+        <!-- Título -->
+        <h1 class="text-5xl font-bold text-center mb-8">Ponte en Contacto</h1>
+        <p class="text-lg text-center text-gray-200 mb-12">
+            Completa el formulario y estaré encantado de ayudarte con tus consultas o proyectos.
+        </p>
+
+        <!-- Formulario -->
+        <div class="bg-white text-gray-800 max-w-3xl mx-auto p-8 rounded-lg shadow-lg">
+            <form action="#" method="POST" class="space-y-6">
+                <!-- Nombre -->
+                <div>
+                    <label for="nombre" class="block text-sm font-semibold">Nombre Completo</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        required 
+                        class="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Ej. Juan Pérez">
+                </div>
+
+                <!-- Correo -->
+                <div>
+                    <label for="email" class="block text-sm font-semibold">Correo Electrónico</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        class="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Ej. juanperez@correo.com">
+                </div>
+
+                <!-- Asunto -->
+                <div>
+                    <label for="asunto" class="block text-sm font-semibold">Asunto</label>
+                    <input 
+                        type="text" 
+                        id="asunto" 
+                        name="asunto" 
+                        required 
+                        class="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Ej. Consulta de servicios">
+                </div>
+
+                <!-- Mensaje -->
+                <div>
+                    <label for="mensaje" class="block text-sm font-semibold">Mensaje</label>
+                    <textarea 
+                        id="mensaje" 
+                        name="mensaje" 
+                        required 
+                        rows="5"
+                        class="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Escribe tu mensaje aquí"></textarea>
+                </div>
+
+                <!-- Botón Enviar -->
+                <div class="text-center">
+                    <button 
+                        type="submit" 
+                        class="w-full sm:w-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 focus:ring-4 focus:ring-purple-300">
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Footer -->
+<footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Columna 1: Acerca de -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Acerca de</h3>
+                <p class="text-gray-400">
+                    Soy un desarrollador apasionado por crear soluciones digitales innovadoras, desde portafolios hasta aplicaciones web personalizadas.
+                </p>
+            </div>
+
+            <!-- Columna 2: Enlaces -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+                <ul class="space-y-2">
+                    <li><a href="#servicios" class="text-gray-400 hover:text-blue-400 transition">Servicios</a></li>
+                    <li><a href="#portafolio" class="text-gray-400 hover:text-blue-400 transition">Portafolio</a></li>
+                    <li><a href="#contacto" class="text-gray-400 hover:text-blue-400 transition">Contacto</a></li>
+                    <li><a href="#blog" class="text-gray-400 hover:text-blue-400 transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Redes Sociales -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Sígueme</h3>
+                <p class="text-gray-400 mb-4">Conéctate conmigo en redes sociales:</p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-blue-500 transition">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="text-gray-400 hover:text-blue-400 transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-blue-600 transition">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-pink-500 transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea Divisoria -->
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+            <p class="text-gray-400">
+                &copy; 2024 Antony. Todos los derechos reservados.
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</body>
+</html>
